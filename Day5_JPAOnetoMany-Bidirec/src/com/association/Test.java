@@ -1,0 +1,40 @@
+package com.association;
+
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+
+public class Test {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		EntityManagerFactory factory=Persistence.createEntityManagerFactory("JPA-PU");
+		EntityManager em=factory.createEntityManager();
+		em.getTransaction().begin();
+		Department dept = new Department();
+		dept.setId(2);
+		dept.setName("Software");
+		
+		Department dept1 = new Department();
+		dept1.setId(3);
+		dept1.setName("Core Technology");
+		
+		Employee e1=new Employee();
+		e1.setName("Soujan");
+		e1.setSalary(45000);
+		e1.setDept(dept1);
+		
+		Employee e2=new Employee();
+		e2.setName("James");
+		e2.setSalary(40000);
+		e2.setDept(dept);
+		
+		em.persist(e1);
+		em.persist(e2);
+		
+		System.out.println("Added Emp with dept");
+		em.getTransaction().commit();
+		em.close();
+	}
+
+}
