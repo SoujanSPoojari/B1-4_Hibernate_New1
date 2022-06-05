@@ -2,12 +2,13 @@ package entities;
 
 import java.io.Serializable;
 
-import javax.persistence.CascadeType;
+
+//import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
+//import javax.persistence.JoinColumn;
+//import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -27,12 +28,16 @@ public class Order implements Serializable
 	@Column(name="paymentMode")
 	private String paymentMode;
 	@Column(name="shopId")
-	@OneToOne(cascade = CascadeType.ALL)
+	/*@OneToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "customer_id")
-	private Customer customer;
+	private Customer customer;*/
 	private int shop_id;
 	public int getId() {
 		return id;
+	}
+	public Order() {
+		super();
+		
 	}
 	public void setId(int id) {
 		this.id = id;

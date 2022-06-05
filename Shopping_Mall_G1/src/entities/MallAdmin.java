@@ -2,12 +2,13 @@ package entities;
 
 import java.io.Serializable;
 
-import javax.persistence.CascadeType;
+
+//import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
+//import javax.persistence.JoinColumn;
+//import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -26,12 +27,10 @@ public class MallAdmin implements Serializable
 	private Mall mall;
 	@Column(name="Phone")
 	private String phone;
-	@OneToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name = "user_id")
-	private MallAdmin malladmin;
-	@OneToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name = "user_id")
-	private Mall mall1;
+	public MallAdmin() {
+		super();
+		
+	}
 	public int getId() {
 		return id;
 	}

@@ -27,8 +27,8 @@ public class ShopOwner implements Serializable
 	@Column(name="shopId")
 	private int shop_id;
 	@OneToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name = "user_id")
-	private User user;
+	@JoinColumn(name = "malladmin_id")
+	private MallAdmin malladmin;
 	public int getId() {
 		return id;
 	}

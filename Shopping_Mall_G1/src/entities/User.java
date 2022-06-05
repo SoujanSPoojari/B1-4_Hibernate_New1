@@ -2,12 +2,13 @@ package entities;
 
 import java.io.Serializable;
 
-import javax.persistence.CascadeType;
+
+//import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
+//import javax.persistence.JoinColumn;
+//import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -24,15 +25,10 @@ public class User implements Serializable
 	private String type;
 	@Column(name="Password")
 	private String password;
-	@OneToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name = "user_id")
-	private Customer customer;
-	@OneToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name = "user_id")
-	private MallAdmin malladmin;
-	@OneToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name = "user_id")
-	private ShopOwner shopowner;
+	public User() {
+		super();
+		
+	}
 	public long getId() {
 		return id;
 	}

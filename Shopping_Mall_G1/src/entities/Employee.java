@@ -2,13 +2,14 @@ package entities;
 
 import java.io.Serializable;
 
+
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
+//import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -33,10 +34,11 @@ public class Employee implements Serializable
 	@OneToMany(cascade = CascadeType.ALL)
 	@JoinColumn(name = "shop_id")
 	private Shop shop;
-	@OneToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name = "customer_id")
-	private Shop shop1;
 	private int shop_id;
+	public Employee() {
+		super();
+		
+	}
 	public int getId() {
 		return id;
 	}

@@ -2,13 +2,14 @@ package entities;
 
 import java.io.Serializable;
 
+
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
+//import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -34,17 +35,16 @@ public class Shop implements Serializable
 	@Column(name="leaseStatus")
 	private String leaseStatus;
 	@Column(name="shopId")
-	@OneToMany(cascade = CascadeType.ALL)
-	@JoinColumn(name = "item_id")
-	private Item item;
-	@OneToMany(cascade = CascadeType.ALL)
-	@JoinColumn(name = "shop_id")
 	private Employee employee;
-	@OneToOne(cascade = CascadeType.ALL)
+	@OneToMany(cascade = CascadeType.ALL)
 	@JoinColumn(name = "customer_id")
 	private Employee employee1;
 	public int getShopId() {
 		return shopId;
+	}
+	public Shop() {
+		super();
+		
 	}
 	public void setShopId(int shopId) {
 		this.shopId = shopId;

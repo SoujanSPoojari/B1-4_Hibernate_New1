@@ -33,6 +33,10 @@ public class Item implements Serializable
 	@OneToMany(cascade = CascadeType.ALL)
 	@JoinColumn(name = "shop_id")
 	private Shop shop;
+	public Item() {
+		super();
+		
+	}
 	public int getId() {
 		return id;
 	}
